@@ -22,7 +22,7 @@ function watch() {
     })
     gulp.watch('./assets/scss/**/*.scss', style)
     gulp.watch('./**/*.php').on('change', browserSync.reload)
-    gulp.watch('./src/js/**/*.js').on('change', browserSync.reload)
+    gulp.watch('./assets/js/**/*.js').on('change', browserSync.reload)
 
 
 }

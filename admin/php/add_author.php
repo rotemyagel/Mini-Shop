@@ -2,22 +2,27 @@
 
 session_start();
 if (!isset($_SESSION['author'])) {
-    header('Location: http://mini-shop.local/login.php');
+    header('Location: /login.php');
 }
 
-$servername = "localhost";
-$username = "rotem";
-$password = "2020";
-$dbname = "mini_shop";
+if (isset($_POST['submit_btn'])) {
 
-// Create connection
-$conn = mysqli_connect($servername, $username, $password, $dbname);
+    $servername = "localhost";
+    $username = "rotem";
+    $password = "2020";
+    $dbname = "mini_shop";
 
-$name = mysqli_real_escape_string($conn, $_POST['name']);
-$email = mysqli_real_escape_string($conn, $_POST['email']);
-$pass = mysqli_real_escape_string($conn, $_POST['password']);
-$pass = hash('sha512', $pass);
-$sql = "INSERT INTO author(name, email, password) VALUES('$name', '$email', '$pass')";
-$result = mysqli_query($conn, $sql);
+    // Create connection
+    $conn = mysqli_connect($servername, $username, $password, $dbname);
 
-mysqli_close($conn);
+    $name = mysqli_real_escape_string($conn, $_POST['name']);
+    $email = mysqli_real_escape_string($conn, $_POST['email']);
+    $pass = mysqli_real_escape_string($conn, $_POST['password']);
+    $pass = hash('sha512', $pass);
+    $sql = "INSERT INTO author(name, email, password) VALUES('$name', '$email', '$pass')";
+    $result = mysqli_query($conn, $sql);
+
+    mysqli_close($conn);
+
+    header('Location: /admin/insert_author.php');
+}

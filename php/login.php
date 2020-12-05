@@ -15,9 +15,9 @@ $sql = "SELECT id FROM author WHERE email='$email' AND password='$pass'";
 $result = mysqli_query($conn, $sql);
 if (mysqli_num_rows($result) == 1) {
     $_SESSION['author'] = mysqli_fetch_array($result)[0];
-    header('Location: http://mini-shop.local/admin/insert_post.php');
+    header('Location: /admin/insert_post.php');
 } else {
-    header('Location: http://mini-shop.local/login.php?error=1');
+    header('Location: /login.php?error=1');
 }
 
 mysqli_close($conn);

@@ -113,9 +113,24 @@ input{
 
 #navbarNav{
     width: calc(100% - #{viewport-desktop(177)});
+    @media only screen and (max-width : 767px) {
+        width: 100%;
+        position: absolute;
+        bottom: -1px;
+        background: #fff;
+        transform: translateY(100%);
+        z-index: 1;
+        left: 0;
+        display: none;
+    }
     margin-left: auto;
         .login {
             margin-left: auto;
+            @media only screen and (max-width : 767px) {
+                order: -1;
+                margin-left: 0;
+                
+            }
             margin-right: 0;
         }
 }
@@ -133,11 +148,16 @@ input{
       background-color: red;
       color: #fff;
       margin-top: 30px;
+      cursor: pointer;
   }
 
   .navbar-brand {
     position: absolute;
     font-size: viewport-desktop(60);
+    @media only screen and (max-width : 767px) {
+        font-size: viewport-mobile(60);
+        z-index: 2;
+    }
     z-index: 1;
     top: 0;
     line-height: 01;
@@ -192,6 +212,7 @@ input{
             color: #fff;
             display: inline-block;
             margin-top: 15px;
+            cursor: pointer;
         }
 
         .card-title {
@@ -225,21 +246,57 @@ input{
     }
 }
 
-.nav {
+.navbar {
     display: flex;
-    align-items: center;
-    .navbar-nav {
+    flex-wrap: wrap;
+    position: relative;
+    .nav {
+        height: 60px;
         display: flex;
-        list-style: none;
-        .nav-item{
-            margin-right: 30px; 
-            a{
-                text-decoration: none;
+        align-items: center;
+        .navbar-nav {
+            display: flex;
+            list-style: none;
+            flex-wrap: wrap;
+            line-height: 1;
+            margin: 0;
+            @media only screen and (max-width : 767px) {
+                flex-direction: column;
+                left: 0;
+                padding: viewport-mobile(100) 15px;
+            }
+            .nav-item{
+                margin-right: 30px; 
+                @media only screen and (max-width : 767px) {
+                    margin: 15px 0;
+                }
+                a{
+                    text-decoration: none;
+                    color: inherit;
+                }
+            }
+        
+        }
+        
+        .bars {
+            @media only screen and (max-width : 767px) {
+            width: 100%;
+            text-align: right;
+            button{
+                background-color: transparent;
+                border: none;
+                font-size: 20px;
             }
         }
-    
+        @media only screen and (min-width : 768px) {
+            display: none;
+        }
+    }
     }
 }
+
+
+
 
 .msg {
     margin-bottom: 50px;

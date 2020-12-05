@@ -82,9 +82,23 @@ input[type="checkbox"] {
 #navbarNav {
   width: calc(100% - 9.21875vw);
   margin-left: auto; }
+  @media only screen and (max-width: 767px) {
+    #navbarNav {
+      width: 100%;
+      position: absolute;
+      bottom: -1px;
+      background: #fff;
+      transform: translateY(100%);
+      z-index: 1;
+      left: 0;
+      display: none; } }
   #navbarNav .login {
     margin-left: auto;
     margin-right: 0; }
+    @media only screen and (max-width: 767px) {
+      #navbarNav .login {
+        order: -1;
+        margin-left: 0; } }
 
 textarea {
   width: 100%;
@@ -97,7 +111,8 @@ textarea {
   padding: 10px 30px;
   background-color: red;
   color: #fff;
-  margin-top: 30px; }
+  margin-top: 30px;
+  cursor: pointer; }
 
 .navbar-brand {
   position: absolute;
@@ -111,6 +126,10 @@ textarea {
   display: inline-flex;
   text-align: center;
   padding: 15px; }
+  @media only screen and (max-width: 767px) {
+    .navbar-brand {
+      font-size: 7.8125vw;
+      z-index: 2; } }
 
 .title {
   text-align: center;
@@ -147,7 +166,8 @@ textarea {
       padding: 10px 30px;
       color: #fff;
       display: inline-block;
-      margin-top: 15px; }
+      margin-top: 15px;
+      cursor: pointer; }
     .cards .card .card-title {
       font-size: 1.5625vw;
       margin-top: 0; }
@@ -169,16 +189,44 @@ textarea {
       .cards .card .price.delete-price, .cards .card .sale-price.delete-price {
         text-decoration: line-through; }
 
-.nav {
+.navbar {
   display: flex;
-  align-items: center; }
-  .nav .navbar-nav {
+  flex-wrap: wrap;
+  position: relative; }
+  .navbar .nav {
+    height: 60px;
     display: flex;
-    list-style: none; }
-    .nav .navbar-nav .nav-item {
-      margin-right: 30px; }
-      .nav .navbar-nav .nav-item a {
-        text-decoration: none; }
+    align-items: center; }
+    .navbar .nav .navbar-nav {
+      display: flex;
+      list-style: none;
+      flex-wrap: wrap;
+      line-height: 1;
+      margin: 0; }
+      @media only screen and (max-width: 767px) {
+        .navbar .nav .navbar-nav {
+          flex-direction: column;
+          left: 0;
+          padding: 13.02083vw 15px; } }
+      .navbar .nav .navbar-nav .nav-item {
+        margin-right: 30px; }
+        @media only screen and (max-width: 767px) {
+          .navbar .nav .navbar-nav .nav-item {
+            margin: 15px 0; } }
+        .navbar .nav .navbar-nav .nav-item a {
+          text-decoration: none;
+          color: inherit; }
+    @media only screen and (max-width: 767px) {
+      .navbar .nav .bars {
+        width: 100%;
+        text-align: right; }
+        .navbar .nav .bars button {
+          background-color: transparent;
+          border: none;
+          font-size: 20px; } }
+    @media only screen and (min-width: 768px) {
+      .navbar .nav .bars {
+        display: none; } }
 
 .msg {
   margin-bottom: 50px; }

@@ -2,7 +2,7 @@
 
 session_start();
 if (!isset($_SESSION['author'])) {
-    header('Location: http://mini-shop.local/login.php');
+    header('Location: /login.php');
 }
 
 
@@ -66,5 +66,5 @@ if (isset($_POST['submit_btn'])) {
 
 
     mysqli_close($conn);
-    header('Location: http://mini-shop.local/admin/insert_post.php?msg');
+    header('Location: /admin/insert_post.php?msg');
 }
