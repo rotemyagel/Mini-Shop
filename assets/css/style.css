@@ -82,6 +82,9 @@ input[type="checkbox"] {
 #navbarNav {
   width: calc(100% - 9.21875vw);
   margin-left: auto; }
+  @media only screen and (min-width: 768px) {
+    #navbarNav {
+      display: block !important; } }
   @media only screen and (max-width: 767px) {
     #navbarNav {
       width: 100%;
@@ -176,7 +179,17 @@ textarea {
           font-size: 7.8125vw; } }
     .cards .card .card-body {
       padding: 15px;
-      border: 1px solid rgba(0, 0, 0, 0.5); }
+      border: 1px solid rgba(0, 0, 0, 0.5);
+      flex-direction: column;
+      height: 100%;
+      display: flex; }
+      .cards .card .card-body .card-content {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        height: 100%; }
+        .cards .card .card-body .card-content .card-text {
+          flex-grow: 1; }
     .cards .card .price, .cards .card .sale-price {
       font-size: 1.04167vw;
       margin-right: 15px; }

@@ -113,6 +113,9 @@ input{
 
 #navbarNav{
     width: calc(100% - #{viewport-desktop(177)});
+    @media only screen and (min-width : 768px) {
+        display: block !important; 
+    }
     @media only screen and (max-width : 767px) {
         width: 100%;
         position: absolute;
@@ -226,6 +229,18 @@ input{
         .card-body {
             padding: 15px;
             border: 1px solid  rgba(0, 0, 0, .5);
+            flex-direction: column;
+            height: 100%;
+            display: flex;
+            .card-content {
+                display: flex;
+                flex-direction: column;
+                align-items: flex-start;
+                height: 100%;
+                .card-text {
+                    flex-grow: 1;
+                }
+            }
         }
 
         .price, .sale-price{
