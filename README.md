@@ -2,7 +2,7 @@
 ## Login 
 ### Email - a@b.c
 ### Password - 1234
-folder for the db inside
+folder for the db inside root
 
 http://mini-shop.local/
 
