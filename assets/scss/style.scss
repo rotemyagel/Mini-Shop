@@ -1,0 +1,256 @@
+
+$desktop-width: 1920;
+
+//function to calculate element viewport desktop
+@function viewport-desktop($element) {
+  @return ($element/$desktop-width * 100vw);
+}
+
+
+$mobile-width: 768;
+
+//function to calculate element viewport mobile
+@function viewport-mobile($element) {
+  @return ($element/$mobile-width * 100vw);
+}
+
+html, body {
+    min-height: 100vh;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Roboto', sans-serif;
+    color: #333;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    font-size: viewport-desktop(16);
+    line-height: 1.5;
+    @media only screen and (max-width : 767px) {
+        font-size: viewport-mobile(30);
+    }
+
+
+}
+
+*, *:before, *:after {
+    box-sizing: border-box;
+  }
+
+.hero{
+    display: flex;
+    background-image: url('../images/iStock-904084674.jpg');
+    height: 70vh;
+    @media only screen and (max-width : 767px) {
+        height: auto;
+        padding: 30px 0;
+    }
+    background-position: center;
+    background-size: cover;
+    background-attachment: fixed;
+    position: relative;
+    &:before{
+        content: '';
+        position: absolute;
+        background-color: rgba(0, 0, 0, .1);
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+    }
+    .content{
+        position: relative;
+        color: #fff;
+        max-width: 50vw;
+        @media only screen and (max-width : 767px) {
+            max-width: 100vw;
+        }
+        .title{
+            font-size: viewport-desktop(120);
+            @media only screen and (max-width : 767px) {
+                font-size: viewport-mobile(150);
+            }
+            text-align: left;
+        }
+        .description{
+            font-size: viewport-desktop(20);
+            @media only screen and (max-width : 767px) {
+                font-size: viewport-mobile(30);
+            }
+            line-height: 1.5;
+        }
+    }
+}
+
+.container {
+    max-width: 1140px;
+    margin: auto;
+    width: 100%;
+    padding: 0 15px;
+    flex: 1 0 auto;
+}
+
+input{
+    width: 100%;
+    max-width: 100%;
+    height: 50px;
+    margin-bottom: 15px;
+    padding: 0 15px;
+  }
+
+  input[type="checkbox"] {
+    width: auto;
+    height: auto;
+    margin: 10px 0;
+    vertical-align: middle;
+    margin-right: 10px;
+}
+
+
+
+
+#navbarNav{
+    width: calc(100% - #{viewport-desktop(177)});
+    margin-left: auto;
+        .login {
+            margin-left: auto;
+            margin-right: 0;
+        }
+}
+
+  textarea{
+      width: 100%;
+      max-width: 100%;
+  }
+
+  .submit{
+      display: inline-block;
+      box-shadow: none;
+      border: none;
+      padding: 10px 30px;
+      background-color: red;
+      color: #fff;
+      margin-top: 30px;
+  }
+
+  .navbar-brand {
+    position: absolute;
+    font-size: viewport-desktop(60);
+    z-index: 1;
+    top: 0;
+    line-height: 01;
+    text-decoration: none;
+    background: red;
+    color: #fff;
+    display: inline-flex;
+    text-align: center;
+    padding: 15px;
+}
+
+
+
+.title{
+    text-align: center;
+    font-size: viewport-desktop(75);
+    @media only screen and (max-width : 767px) {
+        font-size: viewport-mobile(75);
+    }
+}
+
+.cards{
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0 -15px;
+    
+    .card{
+        flex: 0 0 calc(100% / 3);
+        @media only screen and (max-width : 767px) {
+            flex: 0 0 100%;
+        }
+        padding: 0 15px;
+        position: relative;
+        margin-bottom: 30px;
+        .banner{
+            position: absolute;
+            left: 15px;
+            top: 0;
+            background: red;
+            padding: 5px 30px;
+            color: #fff;
+            font-weight: 700; 
+        }
+        img{
+            max-width: 100%;
+        }
+
+        .btn-primary {
+            text-decoration: none;
+            background: blue;
+            padding: 10px 30px;
+            color: #fff;
+            display: inline-block;
+            margin-top: 15px;
+        }
+
+        .card-title {
+            font-size:  viewport-desktop(30);
+            margin-top: 0;
+            @media only screen and (max-width : 767px) {
+                font-size: viewport-mobile(60);
+            }
+        }
+
+        .card-body {
+            padding: 15px;
+            border: 1px solid  rgba(0, 0, 0, .5);
+        }
+
+        .price, .sale-price{
+            font-size: viewport-desktop(20);
+            @media only screen and (max-width : 767px) {
+                font-size: viewport-mobile(50);
+            }
+            margin-right: 15px;
+            &:after{
+                content: '$';
+                margin-left: 1px;
+            }
+        
+            &.delete-price{
+                text-decoration: line-through;
+            }
+        }
+    }
+}
+
+.nav {
+    display: flex;
+    align-items: center;
+    .navbar-nav {
+        display: flex;
+        list-style: none;
+        .nav-item{
+            margin-right: 30px; 
+            a{
+                text-decoration: none;
+            }
+        }
+    
+    }
+}
+
+.msg {
+    margin-bottom: 50px;
+}
+
+input[type="file"] {
+    padding: 0;
+}
+
+
+.footer{
+    text-align: center;
+    margin-top: 100px;
+}

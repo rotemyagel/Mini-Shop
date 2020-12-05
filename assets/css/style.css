@@ -1,0 +1,191 @@
+html, body {
+  min-height: 100vh; }
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Roboto', sans-serif;
+  color: #333;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  font-size: 0.83333vw;
+  line-height: 1.5; }
+  @media only screen and (max-width: 767px) {
+    body {
+      font-size: 3.90625vw; } }
+
+*, *:before, *:after {
+  box-sizing: border-box; }
+
+.hero {
+  display: flex;
+  background-image: url("../images/iStock-904084674.jpg");
+  height: 70vh;
+  background-position: center;
+  background-size: cover;
+  background-attachment: fixed;
+  position: relative; }
+  @media only screen and (max-width: 767px) {
+    .hero {
+      height: auto;
+      padding: 30px 0; } }
+  .hero:before {
+    content: '';
+    position: absolute;
+    background-color: rgba(0, 0, 0, 0.1);
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0; }
+  .hero .content {
+    position: relative;
+    color: #fff;
+    max-width: 50vw; }
+    @media only screen and (max-width: 767px) {
+      .hero .content {
+        max-width: 100vw; } }
+    .hero .content .title {
+      font-size: 6.25vw;
+      text-align: left; }
+      @media only screen and (max-width: 767px) {
+        .hero .content .title {
+          font-size: 19.53125vw; } }
+    .hero .content .description {
+      font-size: 1.04167vw;
+      line-height: 1.5; }
+      @media only screen and (max-width: 767px) {
+        .hero .content .description {
+          font-size: 3.90625vw; } }
+
+.container {
+  max-width: 1140px;
+  margin: auto;
+  width: 100%;
+  padding: 0 15px;
+  flex: 1 0 auto; }
+
+input {
+  width: 100%;
+  max-width: 100%;
+  height: 50px;
+  margin-bottom: 15px;
+  padding: 0 15px; }
+
+input[type="checkbox"] {
+  width: auto;
+  height: auto;
+  margin: 10px 0;
+  vertical-align: middle;
+  margin-right: 10px; }
+
+#navbarNav {
+  width: calc(100% - 9.21875vw);
+  margin-left: auto; }
+  #navbarNav .login {
+    margin-left: auto;
+    margin-right: 0; }
+
+textarea {
+  width: 100%;
+  max-width: 100%; }
+
+.submit {
+  display: inline-block;
+  box-shadow: none;
+  border: none;
+  padding: 10px 30px;
+  background-color: red;
+  color: #fff;
+  margin-top: 30px; }
+
+.navbar-brand {
+  position: absolute;
+  font-size: 3.125vw;
+  z-index: 1;
+  top: 0;
+  line-height: 01;
+  text-decoration: none;
+  background: red;
+  color: #fff;
+  display: inline-flex;
+  text-align: center;
+  padding: 15px; }
+
+.title {
+  text-align: center;
+  font-size: 3.90625vw; }
+  @media only screen and (max-width: 767px) {
+    .title {
+      font-size: 9.76563vw; } }
+
+.cards {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 0 -15px; }
+  .cards .card {
+    flex: 0 0 calc(100% / 3);
+    padding: 0 15px;
+    position: relative;
+    margin-bottom: 30px; }
+    @media only screen and (max-width: 767px) {
+      .cards .card {
+        flex: 0 0 100%; } }
+    .cards .card .banner {
+      position: absolute;
+      left: 15px;
+      top: 0;
+      background: red;
+      padding: 5px 30px;
+      color: #fff;
+      font-weight: 700; }
+    .cards .card img {
+      max-width: 100%; }
+    .cards .card .btn-primary {
+      text-decoration: none;
+      background: blue;
+      padding: 10px 30px;
+      color: #fff;
+      display: inline-block;
+      margin-top: 15px; }
+    .cards .card .card-title {
+      font-size: 1.5625vw;
+      margin-top: 0; }
+      @media only screen and (max-width: 767px) {
+        .cards .card .card-title {
+          font-size: 7.8125vw; } }
+    .cards .card .card-body {
+      padding: 15px;
+      border: 1px solid rgba(0, 0, 0, 0.5); }
+    .cards .card .price, .cards .card .sale-price {
+      font-size: 1.04167vw;
+      margin-right: 15px; }
+      @media only screen and (max-width: 767px) {
+        .cards .card .price, .cards .card .sale-price {
+          font-size: 6.51042vw; } }
+      .cards .card .price:after, .cards .card .sale-price:after {
+        content: '$';
+        margin-left: 1px; }
+      .cards .card .price.delete-price, .cards .card .sale-price.delete-price {
+        text-decoration: line-through; }
+
+.nav {
+  display: flex;
+  align-items: center; }
+  .nav .navbar-nav {
+    display: flex;
+    list-style: none; }
+    .nav .navbar-nav .nav-item {
+      margin-right: 30px; }
+      .nav .navbar-nav .nav-item a {
+        text-decoration: none; }
+
+.msg {
+  margin-bottom: 50px; }
+
+input[type="file"] {
+  padding: 0; }
+
+.footer {
+  text-align: center;
+  margin-top: 100px; }
